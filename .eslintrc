@@ -1,0 +1,37 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "ignorePatterns": ["**/dist/*.js"],
+    "rules": {
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/jsx-one-expression-per-line": 0,
+        "no-extra-semi": 0,
+        "no-console": 0,
+        "react/button-has-type": 0,
+        "no-use-before-define":0,
+        "max-classes-per-file":0, //delete it soon
+        "react/prefer-stateless-function":0,
+        "linebreak-style":0,
+        "react/prop-types":0,
+        "react/destructuring-assignment":0,
+        "class-methods-use-this":0
+        
+    },
+    "parser": "babel-eslint"
+}
