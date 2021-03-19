@@ -12,29 +12,19 @@ export default class Visible extends React.Component {
   };
 
   render() {
-    const style = {
-      // eslint-disable-next-line quotes
-      display: "inline-block",
-      // eslint-disable-next-line quotes
-      width: "fill-content",
-      // eslint-disable-next-line quotes
-      marginInline: "10px",
-      // eslint-disable-next-line quotes
-      borderWidth: "2px",
-      // eslint-disable-next-line quotes
-      borderStyle: "solid",
-      // eslint-disable-next-line quotes
-      borderRadius: "10px",
-      // eslint-disable-next-line quotes
-      padding: "10px",
-    };
     return (
-      <div style={style}>
-        <h1>Visibility Toggle</h1>
-        <button onClick={this.handleToggleVisibility}>{this.state.visibility ? 'Hide details' : 'Show details'}</button>
-        {this.state.visibility
-          ? <div><p>Hey! These are some details you can now see!</p></div>
-          : undefined}
+      <div>
+        <div className="header">
+          <div className="container">
+            <h1 className="header__title">Visibility Toggle</h1>
+          </div>
+        </div>
+        <div className="container">
+          <button className="big-button" onClick={this.handleToggleVisibility}>{this.state.visibility ? 'Hide details' : 'Show details'}</button>
+          {this.state.visibility
+            ? <div className="container"><div className="widget"><p className="widget__message">Hey! These are some details you can now see!</p></div></div>
+            : undefined}
+        </div>
       </div>
     );
   };

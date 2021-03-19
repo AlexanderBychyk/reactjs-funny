@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = (env) => {
   const isProduction = env === 'production';
   return {
-    mode: 'development',
+    mode: isProduction ? 'production' : 'development',
     entry: './src/index.js',
     output: {
       filename: 'main.js',
@@ -19,6 +19,9 @@ module.exports = (env) => {
             presets: ['@babel/preset-env'],
           },
         },
+      }, {
+        test: /\.s?css$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       }],
     },
     devtool: isProduction ? 'source-map' : 'eval-cheap-module-source-map',

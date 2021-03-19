@@ -33,29 +33,22 @@ export default class Counter extends React.Component {
   };
 
   render() {
-    const style = {
-      // eslint-disable-next-line quotes
-      display: "inline-block",
-      // eslint-disable-next-line quotes
-      width: "fill-content",
-      // eslint-disable-next-line quotes
-      marginInline: "10px",
-      // eslint-disable-next-line quotes
-      borderWidth: "2px",
-      // eslint-disable-next-line quotes
-      borderStyle: "solid",
-      // eslint-disable-next-line quotes
-      borderRadius: "10px",
-      // eslint-disable-next-line quotes
-      padding: "10px",
-    };
     return (
-      <div style={style}>
-        <h1>Counter</h1>
-        <p>Count: {this.state.count}</p>
-        <button onClick={this.handleAddOne}>+1</button>
-        <button onClick={this.handleMinusOne}>-1</button>
-        <button onClick={this.handleReset}>reset</button>
+      <div>
+        <div className="header">
+          <div className="container">
+            <h1 className="header__title">Counter</h1>
+          </div>
+        </div>
+        
+        <div className="container">
+          <div className="widget">
+            <p className="widget__message">Count: {this.state.count}</p>
+          </div>
+          <button className="button" onClick={this.handleAddOne}>+1</button>
+          <button className="button" onClick={this.handleMinusOne}>-1</button>
+          <button className="button" onClick={this.handleReset}>reset</button>
+        </div>
       </div>
     );
   };
